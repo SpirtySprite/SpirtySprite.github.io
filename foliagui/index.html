@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" style="--accent: var(--lapis)">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FoliaGUI, library for Paper and Folia</title>
+<meta name="description" content="Inventory menus you can open, update and animate from any thread, on Folia and Paper.">
+<meta name="theme-color" content="#17181c">
+<meta property="og:title" content="FoliaGUI, library for Paper and Folia">
+<meta property="og:description" content="Inventory menus you can open, update and animate from any thread, on Folia and Paper.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Silkscreen&display=swap">
+<link rel="stylesheet" href="/assets/site.css?v=d6889ed034">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar deep">
+<div class="wrap">
+<a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>KiruProject</a>
+<nav class="nav" aria-label="Main"><a href="/#libraries" aria-current="page">Libraries</a><a href="/#plugins">Plugins</a><a href="/#fit" class="optional">How they fit</a><a href="https://github.com/SpirtySprite/" class="secondary">GitHub</a></nav>
+</div>
+</header>
+<main id="main">
+<section class="project-head deep" style="--accent: var(--lapis)">
+<div class="wrap">
+<svg class="pixel big" viewBox="0 0 8 8" shape-rendering="crispEdges" role="img" aria-label="FoliaGUI icon"><rect x="0" y="0" width="1" height="1" fill="#26428b"/><rect x="1" y="0" width="1" height="1" fill="#26428b"/><rect x="3" y="0" width="1" height="1" fill="#26428b"/><rect x="4" y="0" width="1" height="1" fill="#26428b"/><rect x="6" y="0" width="1" height="1" fill="#26428b"/><rect x="7" y="0" width="1" height="1" fill="#26428b"/><rect x="0" y="1" width="1" height="1" fill="#26428b"/><rect x="1" y="1" width="1" height="1" fill="#26428b"/><rect x="3" y="1" width="1" height="1" fill="#26428b"/><rect x="4" y="1" width="1" height="1" fill="#26428b"/><rect x="6" y="1" width="1" height="1" fill="#26428b"/><rect x="7" y="1" width="1" height="1" fill="#26428b"/><rect x="0" y="3" width="1" height="1" fill="#26428b"/><rect x="1" y="3" width="1" height="1" fill="#26428b"/><rect x="3" y="3" width="1" height="1" fill="#f4f1ea"/><rect x="4" y="3" width="1" height="1" fill="#f4f1ea"/><rect x="6" y="3" width="1" height="1" fill="#26428b"/><rect x="7" y="3" width="1" height="1" fill="#26428b"/><rect x="0" y="4" width="1" height="1" fill="#26428b"/><rect x="1" y="4" width="1" height="1" fill="#26428b"/><rect x="3" y="4" width="1" height="1" fill="#f4f1ea"/><rect x="4" y="4" width="1" height="1" fill="#f4f1ea"/><rect x="6" y="4" width="1" height="1" fill="#26428b"/><rect x="7" y="4" width="1" height="1" fill="#26428b"/><rect x="0" y="6" width="1" height="1" fill="#26428b"/><rect x="1" y="6" width="1" height="1" fill="#26428b"/><rect x="3" y="6" width="1" height="1" fill="#26428b"/><rect x="4" y="6" width="1" height="1" fill="#26428b"/><rect x="6" y="6" width="1" height="1" fill="#26428b"/><rect x="7" y="6" width="1" height="1" fill="#26428b"/><rect x="0" y="7" width="1" height="1" fill="#26428b"/><rect x="1" y="7" width="1" height="1" fill="#26428b"/><rect x="3" y="7" width="1" height="1" fill="#26428b"/><rect x="4" y="7" width="1" height="1" fill="#26428b"/><rect x="6" y="7" width="1" height="1" fill="#26428b"/><rect x="7" y="7" width="1" height="1" fill="#26428b"/></svg>
+<div>
+<p class="eyebrow">Library · FoliaGUI-API</p>
+<h1>FoliaGUI</h1>
+<p class="tagline">Inventory menus you can open, update and animate from any thread, on Folia and Paper.</p>
+<dl class="facts"><div><dt>Version</dt><dd>1.1.1</dd></div><div><dt>Java</dt><dd>21</dd></div><div><dt>Runs on</dt><dd>Paper and Folia 1.21</dd></div><div><dt>Dependencies</dt><dd>none</dd></div></dl>
+<div class="hero-actions"><a class="button solid" href="https://github.com/SpirtySprite/FoliaGUI-API">View on GitHub</a><a class="button" href="https://jitpack.io/#SpirtySprite/FoliaGUI-API/1.1.1">JitPack</a></div>
+</div>
+</div>
+</section>
+<div class="project-body">
+<div class="wrap">
+<nav class="toc" aria-label="On this page"><p class="eyebrow">On this page</p><ol><li><a href="#overview">Overview</a></li><li><a href="#features">What's inside</a></li><li><a href="#install">Install</a></li><li><a href="#quick-start">Quick start</a></li><li><a href="#threading">Threading model</a></li></ol></nav>
+<article class="doc"><section id="overview"><h2>Overview</h2><p>FoliaGUI is a pure library: no commands, no <code>plugin.yml</code>, no config file. You add it as a dependency, call <code>FoliaGUI.init(this)</code> once and build menus with a fluent API.</p><p>Every operation that touches an inventory (open, close, update, title change, animation) goes through a Folia-safe scheduler. The same code runs under Folia's regionised threading and on classic single-threaded Paper.</p></section><section id="features"><h2>What's inside</h2><div class="grid-list"><div><b>Paginated, scrolling, storage</b><span>Pages with filters and sorting, searchable lists, scrolling rows, free storage slots.</span></div><div><b>Dialogs</b><span>Confirmation and alert dialogs, quantity picker, force-open prompts.</span></div><div><b>Text input</b><span>Anvil, sign and chat input, each with a callback on the right thread.</span></div><div><b>Merchant windows</b><span>Villager trade screens built from your own offers.</span></div><div><b>Async loading</b><span>Show a placeholder, fill the menu when your data arrives.</span></div><div><b>Animation</b><span>Auto-refresh, cycling items and animated titles.</span></div><div><b>Navigation and themes</b><span>Back buttons, breadcrumbs and one theme for every menu of your plugin.</span></div><div><b>Item builders</b><span>Names, lore, NBT, enchantments, attributes, heads, and item stack save and load.</span></div></div></section><section id="install"><h2>Install</h2><p>FoliaGUI is published through JitPack.</p><div class="code"><div class="code-bar"><span>pom.xml</span><button class="copy" type="button">Copy</button></div><pre><code class="language-xml">&lt;repositories&gt;
+    &lt;repository&gt;
+        &lt;id&gt;jitpack.io&lt;/id&gt;
+        &lt;url&gt;https://jitpack.io&lt;/url&gt;
+    &lt;/repository&gt;
+&lt;/repositories&gt;
+
+&lt;dependency&gt;
+    &lt;groupId&gt;com.github.SpirtySprite&lt;/groupId&gt;
+    &lt;artifactId&gt;FoliaGUI-API&lt;/artifactId&gt;
+    &lt;version&gt;1.1.1&lt;/version&gt;
+&lt;/dependency&gt;</code></pre></div><div class="code"><div class="code-bar"><span>build.gradle.kts</span><button class="copy" type="button">Copy</button></div><pre><code class="language-kotlin">repositories {
+    maven("https://jitpack.io")
+}
+
+dependencies {
+    implementation("com.github.SpirtySprite:FoliaGUI-API:1.1.1")
+}</code></pre></div><p>Mark your plugin Folia-ready, or it won't load on Folia:</p><div class="code"><div class="code-bar"><span>plugin.yml</span><button class="copy" type="button">Copy</button></div><pre><code class="language-yaml">name: YourPlugin
+main: com.yourplugin.YourPlugin
+version: 1.0.0
+api-version: '1.21'
+folia-supported: true</code></pre></div><p>Shade it into your jar and relocate it. FoliaGUI keeps a little process-wide state (its listener and the open-menu registry), so two plugins shading an unrelocated copy would fight over it.</p><div class="code"><div class="code-bar"><span>maven-shade-plugin</span><button class="copy" type="button">Copy</button></div><pre><code class="language-xml">&lt;relocation&gt;
+    &lt;pattern&gt;com.foliagui&lt;/pattern&gt;
+    &lt;shadedPattern&gt;com.yourplugin.libs.foliagui&lt;/shadedPattern&gt;
+&lt;/relocation&gt;</code></pre></div></section><section id="quick-start"><h2>Quick start</h2><div class="code"><div class="code-bar"><span>MyPlugin.java</span><button class="copy" type="button">Copy</button></div><pre><code class="language-java">public final class MyPlugin extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        FoliaGUI.init(this);
+    }
+
+    @Override
+    public void onDisable() {
+        FoliaGUI.shutdown();
+    }
+}</code></pre></div><p>Build a menu and open it. Every call below is safe from any thread:</p><div class="code"><div class="code-bar"><span>Menu.java</span><button class="copy" type="button">Copy</button></div><pre><code class="language-java">Gui gui = Gui.builder()
+        .rows(3)
+        .title("&lt;dark_gray&gt;Main Menu")
+        .create();
+
+gui.filler().fillBorder(
+        ItemBuilder.of(Material.GRAY_STAINED_GLASS_PANE).name(" ").asGuiItem());
+
+gui.setItem(2, 5, ItemBuilder.of(Material.DIAMOND)
+        .name("&lt;aqua&gt;Click me")
+        .lore("&lt;gray&gt;A shiny reward")
+        .glow(true)
+        .asGuiItem(event -&gt; event.getWhoClicked().sendMessage("You clicked the diamond!")));
+
+gui.open(player);</code></pre></div></section><section id="threading"><h2>Threading model</h2><ul><li><code>open</code>, <code>close</code>, <code>update</code>, <code>updateTitle</code> and <code>updateItem</code> are safe from any thread, with a fast path when you are already on the right one.</li><li>Item mutators like <code>setItem</code> and <code>filler()</code> only touch an internal map. They show up on the next <code>update()</code> or <code>open()</code>, so a full screen redraws once.</li><li>Click, drag, open and close callbacks fire on the region thread that owns the player, so they can touch that player and the menu directly.</li><li>One menu instance per viewer. For a menu shown to many players, build one per player.</li></ul></section>
+<nav class="pager" aria-label="More projects">
+<a href="/loadout/" style="--accent: var(--prismarine)"><small>Previous</small><b>Loadout</b></a>
+<a class="next" href="/foliaboard/" style="--accent: var(--emerald)"><small>Next</small><b>FoliaBoard</b></a>
+</nav>
+</article>
+</div>
+</div>
+</main>
+<footer class="footer">
+<div class="wrap">
+<span>Made by KiruGoldzZz for Paper and Folia servers.</span>
+<span><a href="https://github.com/SpirtySprite/">github.com/SpirtySprite</a></span>
+</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" defer></script>
+<script src="/assets/site.js?v=875f2143a2" defer></script>
+</body>
+</html>
