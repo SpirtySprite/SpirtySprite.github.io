@@ -1,7 +1,7 @@
 ---
 title: "Developer API"
 sidebar:
-  order: 5
+  order: 6
 ---
 
 Add Lootrift as a `depend` or `softdepend`, then get the service:

@@ -32,6 +32,13 @@
       ]
     },
     {
+      "slug": "patrols",
+      "title": "Patrols",
+      "take": [
+        "Patrols"
+      ]
+    },
+    {
       "slug": "commands",
       "title": "Commands",
       "take": [

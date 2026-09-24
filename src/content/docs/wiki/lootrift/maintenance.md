@@ -1,7 +1,7 @@
 ---
 title: "Updates and building"
 sidebar:
-  order: 6
+  order: 7
 ---
 
 ## Updates and metrics

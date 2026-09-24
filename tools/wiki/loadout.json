@@ -26,7 +26,7 @@
     },
     {
       "slug": "configuration",
-      "title": "Configuration",
+      "title": "Configuration, points and teams",
       "take": [
         "Configuration"
       ]
@@ -42,8 +42,7 @@
       "slug": "crate-keys",
       "title": "Crate keys as rewards",
       "take": [
-        "### Crate keys as rewards",
-        "### Differences from the NexusSMP version"
+        "### Crate keys as rewards"
       ]
     },
     {

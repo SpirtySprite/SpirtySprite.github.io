@@ -16,6 +16,7 @@ following ones.
 | `value` | | text, command, key or destination depending on the type; a list gives several lines |
 | `delay` | `0` | wait in ticks before the action |
 | `permission` | none | action skipped without the permission, the following ones continue |
+| `once` | `false` | the action runs only the first time each player triggers it, remembered across restarts |
 | `deny-message` | | message when the permission or the payment is missing |
 | `amount` | | amount, effect level or number of particles |
 | `duration` | `60` or `200` | ticks a title stays or an effect lasts |
@@ -39,5 +40,6 @@ following ones.
 | `TAKE_MONEY` | optional message | debits `amount`, otherwise blocks the rest |
 | `REQUIRE_PERMISSION` | permission | blocks the rest without the permission |
 | `SWING` | | the NPC swings its arm |
+| `DIALOGUE` | list of lines | each click shows the next line to that player; the dialogue starts over after a minute without clicking |
 
 Texts accept `%player%`, `%npc%` and, when PlaceholderAPI is installed, all of its placeholders.

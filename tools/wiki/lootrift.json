@@ -33,6 +33,13 @@
       ]
     },
     {
+      "slug": "earning-keys",
+      "title": "Earning keys",
+      "take": [
+        "Earning keys"
+      ]
+    },
+    {
       "slug": "importing",
       "title": "Importing from other plugins",
       "take": [

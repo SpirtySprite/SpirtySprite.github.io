@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
 		version: '1.0.0',
 		summary: 'Edit any item in hand from a menu, with a full undo history.',
 		requires: 'Paper or Folia 1.21 and 26.x',
-		highlights: ['Names, lore, enchantments, attributes', 'Models, trims, heads, potions', 'Undo and developer API'],
+		highlights: ['Names, lore, enchantments, attributes', 'Saved item library and /item give', 'Undo, redo and /give export'],
 		install: '/item',
 	},
 	{
@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
 		version: '1.0.0',
 		summary: 'Packet NPCs described in one YAML file, with click actions.',
 		requires: 'Paper or Folia 1.21 and 26.x',
-		highlights: ['Skins, nametags, equipment, poses', 'Fifteen click action types', 'Imports Citizens, FancyNpcs, ZNPCsPlus'],
+		highlights: ['Patrols, dialogues, one-time actions', 'Sixteen click action types', 'Imports Citizens, FancyNpcs, ZNPCsPlus'],
 		install: '/npc',
 	},
 	{
@@ -74,7 +74,7 @@ export const PROJECTS: Project[] = [
 		version: '1.0.0',
 		summary: 'Animated crates with keys, pity, milestones and an in-game editor.',
 		requires: 'Paper or Folia 1.21 and 26.x',
-		highlights: ['Twelve opening animations', 'Virtual and physical keys, pity', 'Imports CrazyCrates, ExcellentCrates'],
+		highlights: ['Twelve opening animations, pity', 'Seasons, key drops, ItemsAdder and Nexo rewards', 'Imports CrazyCrates, ExcellentCrates'],
 		install: '/crate',
 	},
 	{
@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
 		version: '1.0.0',
 		summary: 'Kits with cooldowns, mastery tiers, streaks and vouchers.',
 		requires: 'Paper or Folia 1.21 and 26.x',
-		highlights: ['Conditions, resets and prices', 'Mastery, streaks and collection', 'Imports EssentialsX, UltimateKits'],
+		highlights: ['Placeholder conditions, team kits, points', 'Mastery, streaks and collection', 'Imports EssentialsX, UltimateKits'],
 		install: '/kit',
 	},
 ];

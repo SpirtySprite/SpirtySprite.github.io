@@ -1,7 +1,7 @@
 ---
 title: "Importing from other plugins"
 sidebar:
-  order: 3
+  order: 4
 ---
 
 Keep the other plugin's folder in `plugins/`, then run `/crate import <source>`:

@@ -1,7 +1,7 @@
 ---
 title: "Placeholders"
 sidebar:
-  order: 4
+  order: 5
 ---
 
 With PlaceholderAPI:

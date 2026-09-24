@@ -1,7 +1,7 @@
 ---
 title: "Importing from other plugins"
 sidebar:
-  order: 4
+  order: 5
 ---
 
 Keep the other plugin's folder in `plugins/`, then run `/npc import <source>`:
