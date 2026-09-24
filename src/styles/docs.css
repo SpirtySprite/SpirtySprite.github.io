@@ -1,0 +1,117 @@
+:root {
+	--sl-font: 'Geist', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+	--sl-font-mono: 'Geist Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+	--sl-color-accent-low: #10283a;
+	--sl-color-accent: #3d8fc9;
+	--sl-color-accent-high: #8cc4ec;
+	--sl-color-white: #f2f2f2;
+	--sl-color-gray-1: #e2e2e2;
+	--sl-color-gray-2: #c4c4c4;
+	--sl-color-gray-3: #9a9a9a;
+	--sl-color-gray-4: #6b6b6b;
+	--sl-color-gray-5: #3a3a3a;
+	--sl-color-gray-6: #252525;
+	--sl-color-black: #1b1b1b;
+	--sl-color-bg-nav: #161616;
+	--sl-color-bg-sidebar: #161616;
+	--sl-color-hairline: #2b2b2b;
+	--sl-color-hairline-light: #333333;
+	--sl-content-width: 48rem;
+	--sl-text-h1: 2.125rem;
+	--sl-text-h2: 1.5rem;
+	--sl-text-h3: 1.1875rem;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #dcecf8;
+	--sl-color-accent: #1f6fa8;
+	--sl-color-accent-high: #164e78;
+	--sl-color-white: #141414;
+	--sl-color-gray-1: #262626;
+	--sl-color-gray-2: #3f3f3f;
+	--sl-color-gray-3: #626262;
+	--sl-color-gray-4: #8f8f8f;
+	--sl-color-gray-5: #d6d6d6;
+	--sl-color-gray-6: #efefef;
+	--sl-color-gray-7: #f7f7f7;
+	--sl-color-black: #ffffff;
+	--sl-color-bg-nav: #fafafa;
+	--sl-color-bg-sidebar: #fafafa;
+	--sl-color-hairline: #e6e6e6;
+	--sl-color-hairline-light: #ededed;
+}
+
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+	letter-spacing: -0.01em;
+}
+
+.sl-markdown-content h2 {
+	padding-top: 0.25rem;
+}
+
+h1#_top {
+	letter-spacing: -0.02em;
+	font-weight: 650;
+}
+
+.sl-markdown-content :not(pre) > code {
+	padding: 0.1em 0.4em;
+	border-radius: 4px;
+	background: var(--sl-color-gray-6);
+	border: 1px solid var(--sl-color-hairline-light);
+	color: var(--sl-color-accent-high);
+	font-size: 0.86em;
+}
+
+.sl-markdown-content table {
+	display: table;
+	width: 100%;
+	font-size: var(--sl-text-sm);
+}
+
+.sl-markdown-content th {
+	text-align: left;
+	color: var(--sl-color-gray-2);
+	font-weight: 600;
+}
+
+.sidebar-content a[aria-current='page'],
+.sidebar-content a[aria-current='page']:hover {
+	background: var(--sl-color-accent-low);
+	color: var(--sl-color-accent-high);
+	font-weight: 600;
+	box-shadow: inset 2px 0 0 var(--sl-color-accent);
+}
+
+.sidebar-content .top-level > li > details > summary .large {
+	font-size: var(--sl-text-xs);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--sl-color-gray-3);
+	font-weight: 600;
+}
+
+.sidebar-content .top-level > li > details > ul .large {
+	font-size: var(--sl-text-sm);
+	text-transform: none;
+	letter-spacing: 0;
+	color: var(--sl-color-gray-1);
+	font-weight: 600;
+}
+
+.sl-link-card {
+	border-radius: 8px;
+}
+
+.site-title {
+	font-weight: 650;
+	letter-spacing: -0.01em;
+	color: var(--sl-color-white);
+	font-size: var(--sl-text-lg);
+}
+
+.site-title img {
+	width: 1.5rem;
+	height: 1.5rem;
+}

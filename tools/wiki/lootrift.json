@@ -1,0 +1,65 @@
+{
+  "readme": "../NexusPlugins/Lootrift/README.md",
+  "out": "src/content/docs/wiki/lootrift",
+  "base": "/wiki/lootrift/",
+  "repo": "Lootrift",
+  "skip": [],
+  "pages": [
+    {
+      "slug": "",
+      "title": "Lootrift",
+      "label": "Introduction",
+      "description": "Animated crates for Paper and Folia.",
+      "take": [
+        "@intro",
+        "Installation",
+        "Languages",
+        "Usage"
+      ]
+    },
+    {
+      "slug": "commands",
+      "title": "Commands and permissions",
+      "take": [
+        "Commands",
+        "Permissions"
+      ]
+    },
+    {
+      "slug": "configuration",
+      "title": "Configuration",
+      "take": [
+        "Configuration"
+      ]
+    },
+    {
+      "slug": "importing",
+      "title": "Importing from other plugins",
+      "take": [
+        "Importing from other crate plugins"
+      ]
+    },
+    {
+      "slug": "placeholders",
+      "title": "Placeholders",
+      "take": [
+        "Placeholders"
+      ]
+    },
+    {
+      "slug": "api",
+      "title": "Developer API",
+      "take": [
+        "Developer API"
+      ]
+    },
+    {
+      "slug": "maintenance",
+      "title": "Updates and building",
+      "take": [
+        "Updates and metrics",
+        "Building"
+      ]
+    }
+  ]
+}

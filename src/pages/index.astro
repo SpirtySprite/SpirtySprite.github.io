@@ -1,0 +1,515 @@
+---
+import { PROJECTS, type Project } from '../data/projects';
+
+const libraries = PROJECTS.filter((project) => project.kind === 'Library');
+const plugins = PROJECTS.filter((project) => project.kind === 'Plugin');
+const groups: { id: string; title: string; note: string; items: Project[] }[] = [
+	{
+		id: 'libraries',
+		title: 'Libraries',
+		note: 'Shaded into your plugin through JitPack. No plugin.yml, no runtime dependencies.',
+		items: libraries,
+	},
+	{
+		id: 'plugins',
+		title: 'Plugins',
+		note: 'Drop-in jars built on the libraries, in English and French, with a developer API.',
+		items: plugins,
+	},
+];
+const description =
+	'Libraries and plugins for Paper and Folia servers: FoliaGUI, FoliaBoard, FoliaNPC, Itemsmith, Puppeteer, Lootrift and Loadout.';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>KiruProject</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content="KiruProject" />
+		<meta property="og:description" content={description} />
+		<meta name="theme-color" content="#161616" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+		/>
+	</head>
+	<body>
+		<header class="bar">
+			<div class="shell bar-row">
+				<a class="brand" href="/">
+					<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+						<rect x="2" y="2" width="9" height="9" rx="1.5" fill="var(--accent)"></rect>
+						<rect x="13" y="2" width="9" height="9" rx="1.5" fill="currentColor" opacity="0.85"></rect>
+						<rect x="2" y="13" width="9" height="9" rx="1.5" fill="currentColor" opacity="0.55"></rect>
+						<rect x="13" y="13" width="9" height="9" rx="1.5" fill="currentColor" opacity="0.3"></rect>
+					</svg>
+					KiruProject
+				</a>
+				<nav class="links" aria-label="Main">
+					<a href="#libraries">Libraries</a>
+					<a href="#plugins">Plugins</a>
+					<a href="/wiki/">Wiki</a>
+					<a href="https://github.com/SpirtySprite">GitHub</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="intro shell">
+				<p class="kicker">Paper and Folia, 1.20.6 to 26.x</p>
+				<h1>Libraries and plugins for Minecraft servers that run on more than one thread.</h1>
+				<p class="lead">
+					Folia ticks every region of a world on its own thread. Menus, scoreboards and NPCs written for a single main
+					thread break there. These are built for it from the start, and run unchanged on regular Paper.
+				</p>
+				<div class="actions">
+					<a class="button primary" href="/wiki/">Read the documentation</a>
+					<a class="button" href="https://github.com/SpirtySprite">Browse the source</a>
+				</div>
+				<dl class="spec">
+					<div><dt>Threading</dt><dd>Safe from any region thread</dd></div>
+					<div><dt>Runtime dependencies</dt><dd>None</dd></div>
+					<div><dt>Java</dt><dd>21</dd></div>
+					<div><dt>Distribution</dt><dd>JitPack and GitHub</dd></div>
+				</dl>
+			</section>
+
+			{
+				groups.map((group) => (
+					<section class="group shell" id={group.id}>
+						<div class="group-head">
+							<h2>{group.title}</h2>
+							<p>{group.note}</p>
+						</div>
+						<ul class="rows">
+							{group.items.map((project) => (
+								<li class="row">
+									<div class="row-main">
+										<div class="row-title">
+											<a href={`/wiki/${project.slug}/`}>{project.name}</a>
+											<span class="version">v{project.version}</span>
+										</div>
+										<p>{project.summary}</p>
+										<ul class="tags">
+											{project.highlights.map((highlight) => (
+												<li>{highlight}</li>
+											))}
+										</ul>
+									</div>
+									<div class="row-side">
+										<code>{project.install}</code>
+										<span class="requires">{project.requires}</span>
+										<div class="row-links">
+											<a href={`/wiki/${project.slug}/`}>Documentation</a>
+											<a href={`https://github.com/SpirtySprite/${project.repo}`}>Source</a>
+										</div>
+									</div>
+								</li>
+							))}
+						</ul>
+					</section>
+				))
+			}
+
+			<section class="closing shell">
+				<div>
+					<h2>Start with the wiki</h2>
+					<p>Every library and plugin is documented page by page, with installation, examples and the full API.</p>
+				</div>
+				<a class="button primary" href="/wiki/">Open the wiki</a>
+			</section>
+		</main>
+
+		<footer class="foot">
+			<div class="shell foot-row">
+				<span>KiruProject, by KiruGoldzZz</span>
+				<span><a href="https://github.com/SpirtySprite">github.com/SpirtySprite</a></span>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--bg: #ffffff;
+		--bg-soft: #f7f7f7;
+		--text: #141414;
+		--text-2: #4a4a4a;
+		--text-3: #7a7a7a;
+		--line: #e6e6e6;
+		--accent: #1f6fa8;
+		--button: #141414;
+		--button-text: #ffffff;
+		color-scheme: light;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--bg: #1b1b1b;
+			--bg-soft: #202020;
+			--text: #f2f2f2;
+			--text-2: #b8b8b8;
+			--text-3: #858585;
+			--line: #2d2d2d;
+			--accent: #3d8fc9;
+			--button: #f2f2f2;
+			--button-text: #141414;
+			color-scheme: dark;
+		}
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		margin: 0;
+		background: var(--bg);
+		color: var(--text);
+		font-family: 'Geist', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+		font-size: 16px;
+		line-height: 1.6;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
+		border-radius: 3px;
+	}
+
+	.shell {
+		width: 100%;
+		max-width: 1080px;
+		margin-inline: auto;
+		padding-inline: clamp(16px, 4vw, 32px);
+	}
+
+	.bar {
+		position: sticky;
+		top: 0;
+		z-index: 10;
+		background: color-mix(in srgb, var(--bg) 92%, transparent);
+		backdrop-filter: blur(8px);
+		border-bottom: 1px solid var(--line);
+	}
+
+	.bar-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		min-height: 60px;
+	}
+
+	.brand {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		font-weight: 650;
+		letter-spacing: -0.01em;
+		text-decoration: none;
+	}
+
+	.links {
+		display: flex;
+		gap: 4px;
+		font-size: 14px;
+	}
+
+	.links a {
+		padding: 6px 10px;
+		border-radius: 6px;
+		color: var(--text-2);
+		text-decoration: none;
+	}
+
+	.links a:hover {
+		color: var(--text);
+		background: var(--bg-soft);
+	}
+
+	.intro {
+		padding-block: clamp(56px, 10vw, 112px) clamp(40px, 6vw, 72px);
+	}
+
+	.kicker {
+		margin: 0;
+		font-family: 'Geist Mono', ui-monospace, monospace;
+		font-size: 13px;
+		color: var(--accent);
+	}
+
+	h1 {
+		max-width: 20ch;
+		margin: 16px 0 0;
+		font-size: clamp(34px, 5.2vw, 56px);
+		line-height: 1.08;
+		font-weight: 650;
+		letter-spacing: -0.03em;
+		text-wrap: balance;
+	}
+
+	.lead {
+		max-width: 60ch;
+		margin: 20px 0 0;
+		font-size: 18px;
+		color: var(--text-2);
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-top: 32px;
+	}
+
+	.button {
+		display: inline-flex;
+		align-items: center;
+		height: 42px;
+		padding: 0 18px;
+		border-radius: 8px;
+		border: 1px solid var(--line);
+		font-size: 15px;
+		font-weight: 550;
+		text-decoration: none;
+		transition: background 120ms ease, border-color 120ms ease;
+	}
+
+	.button:hover {
+		border-color: var(--text-3);
+	}
+
+	.button.primary {
+		background: var(--button);
+		color: var(--button-text);
+		border-color: var(--button);
+	}
+
+	.button.primary:hover {
+		opacity: 0.9;
+	}
+
+	.spec {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		margin: 56px 0 0;
+		border-top: 1px solid var(--line);
+		border-bottom: 1px solid var(--line);
+	}
+
+	.spec div {
+		padding: 16px 20px 16px 0;
+	}
+
+	.spec div + div {
+		padding-left: 20px;
+		border-left: 1px solid var(--line);
+	}
+
+	.spec dt {
+		font-size: 13px;
+		color: var(--text-3);
+	}
+
+	.spec dd {
+		margin: 4px 0 0;
+		font-weight: 550;
+	}
+
+	.group {
+		padding-block: 48px;
+	}
+
+	.group-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 8px 32px;
+		padding-bottom: 16px;
+		border-bottom: 1px solid var(--line);
+	}
+
+	h2 {
+		margin: 0;
+		font-size: 24px;
+		font-weight: 650;
+		letter-spacing: -0.02em;
+	}
+
+	.group-head p {
+		margin: 0;
+		max-width: 52ch;
+		color: var(--text-3);
+		font-size: 15px;
+	}
+
+	.rows {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.row {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 260px;
+		gap: 32px;
+		padding: 24px 0;
+		border-bottom: 1px solid var(--line);
+	}
+
+	.row-title {
+		display: flex;
+		align-items: baseline;
+		gap: 12px;
+	}
+
+	.row-title a {
+		font-size: 20px;
+		font-weight: 650;
+		letter-spacing: -0.01em;
+		text-decoration: none;
+	}
+
+	.row-title a:hover {
+		color: var(--accent);
+	}
+
+	.version {
+		font-family: 'Geist Mono', ui-monospace, monospace;
+		font-size: 13px;
+		color: var(--text-3);
+	}
+
+	.row-main p {
+		margin: 6px 0 0;
+		color: var(--text-2);
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px 20px;
+		list-style: none;
+		margin: 14px 0 0;
+		padding: 0;
+		font-size: 14px;
+		color: var(--text-3);
+	}
+
+	.tags li::before {
+		content: '';
+		display: inline-block;
+		width: 5px;
+		height: 5px;
+		margin-right: 8px;
+		border-radius: 1px;
+		background: var(--accent);
+		vertical-align: 2px;
+	}
+
+	.row-side {
+		min-width: 0;
+		display: grid;
+		align-content: start;
+		gap: 8px;
+		font-size: 14px;
+	}
+
+	.row-side code {
+		display: block;
+		overflow-wrap: anywhere;
+		padding: 8px 10px;
+		border: 1px solid var(--line);
+		border-radius: 6px;
+		background: var(--bg-soft);
+		font-family: 'Geist Mono', ui-monospace, monospace;
+		font-size: 12.5px;
+	}
+
+	.requires {
+		color: var(--text-3);
+	}
+
+	.row-links {
+		display: flex;
+		gap: 16px;
+		font-weight: 550;
+	}
+
+	.row-links a {
+		color: var(--accent);
+		text-decoration: none;
+	}
+
+	.row-links a:hover {
+		text-decoration: underline;
+	}
+
+	.closing {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		margin-block: 24px 72px;
+		padding-block: 32px;
+		border-top: 1px solid var(--line);
+		border-bottom: 1px solid var(--line);
+	}
+
+	.closing p {
+		margin: 6px 0 0;
+		color: var(--text-2);
+	}
+
+	.foot {
+		border-top: 1px solid var(--line);
+		padding-block: 24px 40px;
+		font-size: 14px;
+		color: var(--text-3);
+	}
+
+	.foot-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 12px;
+	}
+
+	@media (max-width: 760px) {
+		.row {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 16px;
+		}
+
+		.spec {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.spec div:nth-child(3) {
+			padding-left: 0;
+			border-left: 0;
+		}
+
+		.spec div:nth-child(n + 3) {
+			border-top: 1px solid var(--line);
+		}
+
+		.links a:nth-child(-n + 2) {
+			display: none;
+		}
+	}
+</style>

@@ -1,0 +1,113 @@
+{
+  "readme": "../NexusSMP/libs/FoliaNPC-API/README.md",
+  "out": "src/content/docs/wiki/folianpc",
+  "base": "/wiki/folianpc/",
+  "repo": "FoliaNPC-API",
+  "skip": [
+    "Table of contents"
+  ],
+  "pages": [
+    {
+      "slug": "",
+      "title": "FoliaNPC",
+      "label": "Introduction",
+      "description": "Packet-based NPCs for Paper and Folia with no dependencies.",
+      "take": [
+        "@intro",
+        "Design"
+      ]
+    },
+    {
+      "slug": "getting-started",
+      "title": "Getting started",
+      "take": [
+        "Requirements",
+        "Installation",
+        "Quick start"
+      ]
+    },
+    {
+      "slug": "creating-npcs",
+      "title": "Creating NPCs",
+      "take": [
+        "Creating NPCs",
+        "Cloning"
+      ]
+    },
+    {
+      "slug": "movement",
+      "title": "Movement and pathfinding",
+      "take": [
+        "Movement"
+      ]
+    },
+    {
+      "slug": "visibility",
+      "title": "Visibility",
+      "take": [
+        "Visibility"
+      ]
+    },
+    {
+      "slug": "skins",
+      "title": "Skins",
+      "take": [
+        "Skins"
+      ]
+    },
+    {
+      "slug": "nametags",
+      "title": "Nametags",
+      "take": [
+        "Nametags"
+      ]
+    },
+    {
+      "slug": "appearance",
+      "title": "Appearance and equipment",
+      "take": [
+        "Appearance",
+        "Equipment"
+      ]
+    },
+    {
+      "slug": "clicks-and-events",
+      "title": "Clicks and events",
+      "take": [
+        "Clicks",
+        "Events"
+      ]
+    },
+    {
+      "slug": "persistence",
+      "title": "Persistence and diagnostics",
+      "take": [
+        "Persistence",
+        "Diagnostics"
+      ]
+    },
+    {
+      "slug": "threading",
+      "title": "Threading",
+      "take": [
+        "Threading"
+      ]
+    },
+    {
+      "slug": "troubleshooting",
+      "title": "Troubleshooting",
+      "take": [
+        "Troubleshooting"
+      ]
+    },
+    {
+      "slug": "limitations",
+      "title": "Limitations and building",
+      "take": [
+        "Known limitations",
+        "Building"
+      ]
+    }
+  ],
+  "version": "1.2.1"
+}

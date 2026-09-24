@@ -1,0 +1,112 @@
+{
+  "readme": "../NexusSMP/libs/FoliaGUI-API/README.md",
+  "out": "src/content/docs/wiki/foliagui",
+  "base": "/wiki/foliagui/",
+  "repo": "FoliaGUI-API",
+  "skip": [
+    "Table of contents"
+  ],
+  "pages": [
+    {
+      "slug": "",
+      "title": "FoliaGUI",
+      "label": "Introduction",
+      "description": "Thread-safe inventory menus for Folia and Paper.",
+      "take": [
+        "@intro",
+        "Core concepts"
+      ]
+    },
+    {
+      "slug": "getting-started",
+      "title": "Getting started",
+      "take": [
+        "Requirements",
+        "Installation",
+        "Quick start"
+      ]
+    },
+    {
+      "slug": "menus",
+      "title": "Menu types",
+      "take": [
+        "### Basic GUI",
+        "### Typed GUIs",
+        "### Paginated GUI",
+        "### Filtering and sorting pages",
+        "### Searchable paginated GUI",
+        "### Scrolling GUI",
+        "### Storage GUI"
+      ]
+    },
+    {
+      "slug": "interaction",
+      "title": "Layout and interaction",
+      "take": [
+        "### Layout filler",
+        "### Interaction modifiers",
+        "### Click types, cooldowns, and permissions"
+      ]
+    },
+    {
+      "slug": "dialogs-and-input",
+      "title": "Dialogs and text input",
+      "take": [
+        "### Confirmation and alert dialogs",
+        "### Force-open dialogs",
+        "### Loading content asynchronously",
+        "### Quantity picker",
+        "### Anvil text input",
+        "### Sign text input",
+        "### Chat text input",
+        "### Merchant trade window"
+      ]
+    },
+    {
+      "slug": "navigation-and-animation",
+      "title": "Navigation, themes and animation",
+      "take": [
+        "### Navigation and themes",
+        "### Animation and auto-refresh",
+        "### Cycling items"
+      ]
+    },
+    {
+      "slug": "items",
+      "title": "Item builders",
+      "take": [
+        "### Item builders",
+        "### Item metadata: NBT, enchants, attributes, and everything else",
+        "### Saving and loading item stacks",
+        "### Text utility"
+      ]
+    },
+    {
+      "slug": "events-and-manager",
+      "title": "Events and GuiManager",
+      "take": [
+        "### Custom events",
+        "### GuiManager"
+      ]
+    },
+    {
+      "slug": "threading",
+      "title": "Lifecycle and threading",
+      "take": [
+        "Lifecycle",
+        "Threading model"
+      ]
+    },
+    {
+      "slug": "reference",
+      "title": "Packages and building",
+      "take": [
+        "Package overview",
+        "Testing",
+        "Building from source",
+        "License"
+      ]
+    }
+  ],
+  "version": "1.1.1"
+}

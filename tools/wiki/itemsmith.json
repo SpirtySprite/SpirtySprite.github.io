@@ -1,0 +1,43 @@
+{
+  "readme": "../NexusPlugins/Itemsmith/README.md",
+  "out": "src/content/docs/wiki/itemsmith",
+  "base": "/wiki/itemsmith/",
+  "repo": "Itemsmith",
+  "skip": [],
+  "pages": [
+    {
+      "slug": "",
+      "title": "Itemsmith",
+      "label": "Introduction",
+      "description": "In-game item editor for Paper and Folia.",
+      "take": [
+        "@intro",
+        "Installation",
+        "Languages"
+      ]
+    },
+    {
+      "slug": "commands",
+      "title": "Commands and permissions",
+      "take": [
+        "Commands",
+        "Permissions"
+      ]
+    },
+    {
+      "slug": "api",
+      "title": "Developer API",
+      "take": [
+        "Developer API"
+      ]
+    },
+    {
+      "slug": "maintenance",
+      "title": "Updates and building",
+      "take": [
+        "Updates and metrics",
+        "Building"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "readme": "../NexusSMP/libs/FoliaBoard-API/README.md",
+  "out": "src/content/docs/wiki/foliaboard",
+  "base": "/wiki/foliaboard/",
+  "repo": "FoliaBoard-API",
+  "skip": [
+    "Table of contents"
+  ],
+  "pages": [
+    {
+      "slug": "",
+      "title": "FoliaBoard",
+      "label": "Introduction",
+      "description": "Packet-level scoreboards, nametags and tab lists for Paper and Folia.",
+      "take": [
+        "@intro",
+        "Why it exists"
+      ]
+    },
+    {
+      "slug": "getting-started",
+      "title": "Getting started",
+      "take": [
+        "Requirements",
+        "Installation",
+        "Quick start"
+      ]
+    },
+    {
+      "slug": "sidebars",
+      "title": "Sidebars",
+      "take": [
+        "Sidebars"
+      ]
+    },
+    {
+      "slug": "layout-profiles",
+      "title": "Layout profiles",
+      "take": [
+        "Layout profiles",
+        "Remembering a player's layout"
+      ]
+    },
+    {
+      "slug": "nametags",
+      "title": "Nametags",
+      "take": [
+        "Nametags"
+      ]
+    },
+    {
+      "slug": "tab-list",
+      "title": "Tab list and numbers",
+      "take": [
+        "Tab-list header & footer",
+        "Below-name & tab-list numbers",
+        "Number formats"
+      ]
+    },
+    {
+      "slug": "boss-bars",
+      "title": "Boss bars",
+      "take": [
+        "Boss bars"
+      ]
+    },
+    {
+      "slug": "text",
+      "title": "Text, animations and placeholders",
+      "take": [
+        "MiniMessage & text",
+        "Animations",
+        "Placeholders"
+      ]
+    },
+    {
+      "slug": "events",
+      "title": "Events and async utilities",
+      "take": [
+        "Events & hooks",
+        "Async utilities"
+      ]
+    },
+    {
+      "slug": "threading",
+      "title": "Threading and performance",
+      "take": [
+        "Threading model",
+        "Performance",
+        "Lifecycle, cleanup & `/reload`"
+      ]
+    },
+    {
+      "slug": "reference",
+      "title": "API reference",
+      "take": [
+        "API reference",
+        "Version support & the honest caveat",
+        "Building from source"
+      ]
+    }
+  ],
+  "version": "1.1.0"
+}

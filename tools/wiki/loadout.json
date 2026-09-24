@@ -1,0 +1,72 @@
+{
+  "readme": "../NexusPlugins/Loadout/README.md",
+  "out": "src/content/docs/wiki/loadout",
+  "base": "/wiki/loadout/",
+  "repo": "Loadout",
+  "skip": [],
+  "pages": [
+    {
+      "slug": "",
+      "title": "Loadout",
+      "label": "Introduction",
+      "description": "Kits with progression for Paper and Folia.",
+      "take": [
+        "@intro",
+        "Installation",
+        "Languages"
+      ]
+    },
+    {
+      "slug": "commands",
+      "title": "Commands and permissions",
+      "take": [
+        "Commands",
+        "Permissions"
+      ]
+    },
+    {
+      "slug": "configuration",
+      "title": "Configuration",
+      "take": [
+        "Configuration"
+      ]
+    },
+    {
+      "slug": "importing",
+      "title": "Importing from other plugins",
+      "take": [
+        "### Importing from other kit plugins"
+      ]
+    },
+    {
+      "slug": "crate-keys",
+      "title": "Crate keys as rewards",
+      "take": [
+        "### Crate keys as rewards",
+        "### Differences from the NexusSMP version"
+      ]
+    },
+    {
+      "slug": "placeholders",
+      "title": "Placeholders",
+      "take": [
+        "Placeholders"
+      ]
+    },
+    {
+      "slug": "api",
+      "title": "Developer API",
+      "take": [
+        "Developer API"
+      ]
+    },
+    {
+      "slug": "maintenance",
+      "title": "Reloading and building",
+      "take": [
+        "Reloading, updates and metrics",
+        "Building"
+      ]
+    }
+  ]
+}

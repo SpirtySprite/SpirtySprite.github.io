@@ -1,0 +1,64 @@
+{
+  "readme": "../NexusPlugins/Puppeteer/README.md",
+  "out": "src/content/docs/wiki/puppeteer",
+  "base": "/wiki/puppeteer/",
+  "repo": "Puppeteer",
+  "skip": [],
+  "pages": [
+    {
+      "slug": "",
+      "title": "Puppeteer",
+      "label": "Introduction",
+      "description": "Packet NPCs for Paper and Folia described in YAML.",
+      "take": [
+        "@intro",
+        "Installation",
+        "Languages"
+      ]
+    },
+    {
+      "slug": "configuration",
+      "title": "Configuring NPCs",
+      "take": [
+        "Global settings",
+        "NPC options"
+      ]
+    },
+    {
+      "slug": "actions",
+      "title": "Click actions",
+      "take": [
+        "Actions"
+      ]
+    },
+    {
+      "slug": "commands",
+      "title": "Commands",
+      "take": [
+        "Command"
+      ]
+    },
+    {
+      "slug": "importing",
+      "title": "Importing from other plugins",
+      "take": [
+        "Importing from other NPC plugins"
+      ]
+    },
+    {
+      "slug": "api",
+      "title": "Developer API",
+      "take": [
+        "Developer API"
+      ]
+    },
+    {
+      "slug": "maintenance",
+      "title": "Updates and building",
+      "take": [
+        "Updates and metrics",
+        "Building"
+      ]
+    }
+  ]
+}

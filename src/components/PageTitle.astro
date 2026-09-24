@@ -1,0 +1,66 @@
+---
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+import { PROJECTS } from '../data/projects';
+
+const id = Astro.locals.starlightRoute.id.replace(/\/$/, '');
+const parts = id.split('/').filter(Boolean);
+const crumbs: { label: string; href?: string }[] = [{ label: 'Home', href: '/' }];
+if (parts[0] === 'wiki') {
+	crumbs.push({ label: 'Wiki', href: parts.length > 1 ? '/wiki/' : undefined });
+	const project = PROJECTS.find((entry) => entry.slug === parts[1]);
+	if (project) {
+		crumbs.push({ label: project.name, href: parts.length > 2 ? `/wiki/${project.slug}/` : undefined });
+	}
+	if (parts.length > 2) {
+		crumbs.push({ label: Astro.locals.starlightRoute.entry.data.title });
+	}
+}
+---
+
+<nav class="crumbs" aria-label="Breadcrumb">
+	<ol>
+		{crumbs.map((crumb) => (
+			<li>{crumb.href ? <a href={crumb.href}>{crumb.label}</a> : <span aria-current="page">{crumb.label}</span>}</li>
+		))}
+	</ol>
+</nav>
+<Default />
+
+<style>
+	.crumbs ol {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 0;
+		margin: 0;
+		padding: 0 0 0 0.75rem;
+		list-style: none;
+		border-left: 2px solid var(--sl-color-accent);
+		font-size: var(--sl-text-sm);
+	}
+	.crumbs li {
+		display: flex;
+		align-items: center;
+		margin: 0;
+	}
+	.crumbs li + li::before {
+		content: '';
+		width: 0.35rem;
+		height: 0.35rem;
+		margin: 0 0.6rem;
+		border-top: 1.5px solid var(--sl-color-gray-4);
+		border-right: 1.5px solid var(--sl-color-gray-4);
+		transform: rotate(45deg);
+	}
+	.crumbs a {
+		color: var(--sl-color-accent-high);
+		text-decoration: none;
+		font-weight: 500;
+	}
+	.crumbs a:hover {
+		text-decoration: underline;
+	}
+	.crumbs span {
+		color: var(--sl-color-gray-3);
+		font-weight: 500;
+	}
+</style>

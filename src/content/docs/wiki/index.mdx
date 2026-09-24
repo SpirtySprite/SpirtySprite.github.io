@@ -1,0 +1,32 @@
+---
+title: Wiki
+description: Documentation for every KiruProject library and plugin.
+tableOfContents: false
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Everything here targets Paper and Folia. The libraries are shaded into your own plugin through JitPack; the
+plugins are dropped into `plugins/` like any other.
+
+## Libraries
+
+<CardGrid>
+	<LinkCard title="FoliaGUI" href="/wiki/foliagui/" description="Inventory menus you can open, update and animate from any thread." />
+	<LinkCard title="FoliaBoard" href="/wiki/foliaboard/" description="Packet-level sidebars, nametags, tab lists and boss bars." />
+	<LinkCard title="FoliaNPC" href="/wiki/folianpc/" description="NPCs made only of packets, with skins, nametags and pathfinding." />
+</CardGrid>
+
+## Plugins
+
+<CardGrid>
+	<LinkCard title="Itemsmith" href="/wiki/itemsmith/" description="Edit any item in hand from a menu, with a full undo history." />
+	<LinkCard title="Puppeteer" href="/wiki/puppeteer/" description="Packet NPCs described in one YAML file, with click actions." />
+	<LinkCard title="Lootrift" href="/wiki/lootrift/" description="Animated crates with keys, pity, milestones and an in-game editor." />
+	<LinkCard title="Loadout" href="/wiki/loadout/" description="Kits with cooldowns, mastery tiers, streaks and vouchers." />
+</CardGrid>
+
+## Finding your way
+
+Use the sidebar to browse a project page by page, or press <kbd>Ctrl</kbd> <kbd>K</kbd> to search every page at once.
+Each page lists its sections on the right.
