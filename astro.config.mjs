@@ -19,6 +19,8 @@ export default defineConfig({
 			customCss: ['./src/styles/docs.css'],
 			components: {
 				PageTitle: './src/components/PageTitle.astro',
+				Header: './src/components/DocsHeader.astro',
+				Sidebar: './src/components/ProjectSidebar.astro',
 			},
 			head: [
 				{ tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.googleapis.com' } },
@@ -37,7 +39,7 @@ export default defineConfig({
 			tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },
 			expressiveCode: {
 				themes: ['github-dark-dimmed', 'github-light'],
-				styleOverrides: { borderRadius: '6px', codeFontFamily: "'Geist Mono', ui-monospace, monospace" },
+				styleOverrides: { borderRadius: '6px', frames: { shadowColor: 'transparent' }, codeFontFamily: "'Geist Mono', ui-monospace, monospace" },
 			},
 			sidebar: [
 				{ label: 'Overview', link: '/wiki/' },

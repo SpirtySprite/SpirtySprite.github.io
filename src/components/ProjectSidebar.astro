@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import Default from '@astrojs/starlight/components/Sidebar.astro';
+import MobileMenuFooter from '@astrojs/starlight/components/MobileMenuFooter.astro';
+import { PROJECTS } from '../data/projects';
+const route = Astro.locals.starlightRoute;
+const project = PROJECTS.find(p => route.id.split('/')[1] === p.slug);
+const pages = project ? (await getCollection('docs')).filter(p => p.id === `wiki/${project.slug}` || p.id.startsWith(`wiki/${project.slug}/`)).sort((a,b) => (a.data.sidebar?.order ?? 999) - (b.data.sidebar?.order ?? 999) || a.data.title.localeCompare(b.data.title)) : [];
+const category = (id: string) => /\/(getting-started|installation|quick-start)$/.test(id) || id === `wiki/${project?.slug}` ? 'Getting started' : /\/(reference|api|events-and-manager)$/.test(id) ? 'Reference' : 'Guides';
+---
+{project ? <>
+  <div class="project-picker">
+    <label for="docs-project">Project</label>
+    <select id="docs-project" aria-label="Choose documentation project">
+      {PROJECTS.map(p => <option value={`/wiki/${p.slug}/`} selected={p.slug === project.slug}>{p.name}</option>)}
+    </select>
+    <span class="version">v{project.version}</span>
+  </div>
+  <nav class="project-nav" aria-label={`${project.name} documentation`}>
+    {['Getting started', 'Guides', 'Reference'].filter(group => pages.some(p => category(p.id) === group)).map(group => <section><h2>{group}</h2><ul>{pages.filter(p => category(p.id) === group).map(p => <li><a href={`/${p.id}/`} aria-current={p.id.replace(/\/$/, '') === route.id.replace(/\/$/, '') ? 'page' : undefined}>{p.id === `wiki/${project.slug}` ? 'Overview' : p.data.sidebar?.label ?? p.data.title}</a></li>)}</ul></section>)}
+  </nav>
+  <a class="all-projects" href="/wiki/">All projects ↗︎</a>
+  <div class="md:sl-hidden"><MobileMenuFooter /></div>
+</> : <Default />}
+<script>
+ document.querySelector<HTMLSelectElement>('#docs-project')?.addEventListener('change', (event) => { window.location.assign((event.currentTarget as HTMLSelectElement).value); });
+</script>
+<style>
+.project-picker { margin:.5rem .5rem 2rem; }
+label { display:block; text-transform:uppercase; letter-spacing:.12em; font-size:.65rem; color:var(--sl-color-gray-3); font-weight:600; margin-bottom:.6rem; }
+select { width:100%; padding:.6rem .7rem; border:1px solid var(--sl-color-hairline); border-radius:5px; background:var(--sl-color-bg); color:var(--sl-color-white); font:inherit; font-size:.9rem; cursor:pointer; }
+.version { display:block; padding:.4rem .7rem 0; font-size:.75rem; color:var(--sl-color-gray-3); }
+section { margin-bottom:1.7rem; }
+h2 { font-size:.8rem; font-weight:600; margin:0 .7rem .65rem; color:var(--sl-color-gray-2); }
+ul { list-style:none; margin:0; padding:0; }
+a { text-decoration:none; }
+li a { display:block; padding:.45rem .7rem; margin:.1rem 0; border-radius:3px; color:var(--sl-color-gray-2); font-size:.875rem; border-left:2px solid transparent; line-height:1.5; }
+li a:hover { color:var(--sl-color-white); background:var(--sl-color-gray-6); }
+li a[aria-current] { background:var(--sl-color-accent-low); color:var(--sl-color-text-accent); border-left-color:var(--sl-color-text-accent); font-weight:500; }
+.all-projects { display:block; border-top:1px solid var(--sl-color-hairline); margin:2rem .7rem 1rem; padding-top:1.2rem; color:var(--sl-color-gray-3); font-size:.8rem; }
+</style>

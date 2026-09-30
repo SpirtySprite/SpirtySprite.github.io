@@ -4,9 +4,9 @@ import { PROJECTS } from '../data/projects';
 
 const id = Astro.locals.starlightRoute.id.replace(/\/$/, '');
 const parts = id.split('/').filter(Boolean);
-const crumbs: { label: string; href?: string }[] = [{ label: 'Home', href: '/' }];
+const crumbs: { label: string; href?: string }[] = [{ label: 'Documentation', href: '/wiki/' }];
 if (parts[0] === 'wiki') {
-	crumbs.push({ label: 'Wiki', href: parts.length > 1 ? '/wiki/' : undefined });
+	if (parts.length === 1) crumbs[0] = { label: 'Documentation' };
 	const project = PROJECTS.find((entry) => entry.slug === parts[1]);
 	if (project) {
 		crumbs.push({ label: project.name, href: parts.length > 2 ? `/wiki/${project.slug}/` : undefined });
@@ -25,16 +25,18 @@ if (parts[0] === 'wiki') {
 	</ol>
 </nav>
 <Default />
+{Astro.locals.starlightRoute.entry.data.description && <p class="page-description">{Astro.locals.starlightRoute.entry.data.description}</p>}
 
 <style>
+.page-description { color:var(--sl-color-gray-3); font-size:1.125rem; line-height:1.6; margin-top:.8rem; max-width: 65ch; }
 	.crumbs ol {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.25rem 0;
 		margin: 0;
-		padding: 0 0 0 0.75rem;
+		padding: 0;
 		list-style: none;
-		border-left: 2px solid var(--sl-color-accent);
+
 		font-size: var(--sl-text-sm);
 	}
 	.crumbs li {
@@ -43,16 +45,14 @@ if (parts[0] === 'wiki') {
 		margin: 0;
 	}
 	.crumbs li + li::before {
-		content: '';
-		width: 0.35rem;
-		height: 0.35rem;
+		content: '/';
 		margin: 0 0.6rem;
-		border-top: 1.5px solid var(--sl-color-gray-4);
-		border-right: 1.5px solid var(--sl-color-gray-4);
-		transform: rotate(45deg);
+
+
+		color: var(--sl-color-gray-4);
 	}
 	.crumbs a {
-		color: var(--sl-color-accent-high);
+		color: var(--sl-color-gray-3);
 		text-decoration: none;
 		font-weight: 500;
 	}

@@ -1,0 +1,21 @@
+---
+import Search from '@astrojs/starlight/components/Search.astro';
+import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
+---
+<div class="docs-header">
+  <a class="wordmark" href="/" aria-label="KiruProject home"><img src="/favicon.svg" width="24" height="24" alt="" />KiruProject</a>
+  <nav aria-label="Main navigation"><a class="active" href="/wiki/">Documentation</a><a href="https://github.com/SpirtySprite">GitHub ↗︎</a></nav>
+  <div class="search"><Search /></div>
+  <div class="theme"><ThemeSelect /></div>
+</div>
+<style>
+.docs-header { display:flex; align-items:center; gap:2rem; height:100%; }
+.wordmark { display:flex; align-items:center; gap:.65rem; color:var(--sl-color-white); text-decoration:none; font-size:1.2rem; font-weight:700; letter-spacing:-.04em; white-space:nowrap; }
+nav { display:flex; gap:1.8rem; height:100%; align-items:center; font-size:.875rem; }
+nav a { color:var(--sl-color-gray-2); text-decoration:none; height:100%; display:flex; align-items:center; border-bottom:2px solid transparent; }
+nav a:hover, nav .active { color:var(--sl-color-text-accent); }
+nav .active { border-bottom-color:var(--sl-color-text-accent); }
+.search { margin-left:auto; width:min(22rem, 30vw); }
+.theme { border-left:1px solid var(--sl-color-hairline); padding-left:1rem; }
+@media(max-width:49.99rem) { .docs-header { gap:.75rem; } nav,.theme { display:none; } .wordmark { font-size:1rem; } .search { width:auto; } }
+</style>

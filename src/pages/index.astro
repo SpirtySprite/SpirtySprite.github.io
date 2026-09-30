@@ -40,30 +40,26 @@ const description =
 		/>
 	</head>
 	<body>
+		<a class="skip-link" href="#main-content">Skip to content</a>
 		<header class="bar">
 			<div class="shell bar-row">
 				<a class="brand" href="/">
-					<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-						<rect x="2" y="2" width="9" height="9" rx="1.5" fill="var(--accent)"></rect>
-						<rect x="13" y="2" width="9" height="9" rx="1.5" fill="currentColor" opacity="0.85"></rect>
-						<rect x="2" y="13" width="9" height="9" rx="1.5" fill="currentColor" opacity="0.55"></rect>
-						<rect x="13" y="13" width="9" height="9" rx="1.5" fill="currentColor" opacity="0.3"></rect>
-					</svg>
+					<img src="/favicon.svg" width="24" height="24" alt="" />
 					KiruProject
 				</a>
 				<nav class="links" aria-label="Main">
 					<a href="#libraries">Libraries</a>
 					<a href="#plugins">Plugins</a>
-					<a href="/wiki/">Wiki</a>
+					<a href="/wiki/">Documentation</a>
 					<a href="https://github.com/SpirtySprite">GitHub</a>
 				</nav>
 			</div>
 		</header>
 
-		<main>
+		<main id="main-content">
 			<section class="intro shell">
 				<p class="kicker">Paper and Folia, 1.20.6 to 26.x</p>
-				<h1>Libraries and plugins for Minecraft servers that run on more than one thread.</h1>
+				<h1>Build better on Paper &amp; Folia.</h1>
 				<p class="lead">
 					Folia ticks every region of a world on its own thread. Menus, scoreboards and NPCs written for a single main
 					thread break there. These are built for it from the start, and run unchanged on regular Paper.
@@ -119,10 +115,10 @@ const description =
 
 			<section class="closing shell">
 				<div>
-					<h2>Start with the wiki</h2>
-					<p>Every library and plugin is documented page by page, with installation, examples and the full API.</p>
+					<h2>Start with the documentation</h2>
+					<p>Installation, practical examples and API guides for every library and plugin.</p>
 				</div>
-				<a class="button primary" href="/wiki/">Open the wiki</a>
+				<a class="button primary" href="/wiki/">Explore documentation</a>
 			</section>
 		</main>
 
@@ -136,30 +132,31 @@ const description =
 </html>
 
 <style is:global>
+.skip-link { position:fixed; top:-5rem; left:1rem; z-index:100; background:var(--bg); padding:.75rem; } .skip-link:focus { top:1rem; }
 	:root {
-		--bg: #ffffff;
-		--bg-soft: #f7f7f7;
-		--text: #141414;
-		--text-2: #4a4a4a;
-		--text-3: #7a7a7a;
-		--line: #e6e6e6;
-		--accent: #1f6fa8;
-		--button: #141414;
-		--button-text: #ffffff;
+		--bg: #fdfdfc;
+		--bg-soft: #f3f5f7;
+		--text: #15191f;
+		--text-2: #465365;
+		--text-3: #647185;
+		--line: #e2e6eb;
+		--accent: #295b83;
+		--button: #295b83;
+		--button-text: #fdfdfc;
 		color-scheme: light;
 	}
 
 	@media (prefers-color-scheme: dark) {
 		:root {
-			--bg: #1b1b1b;
-			--bg-soft: #202020;
+			--bg: #15181d;
+			--bg-soft: #1e232b;
 			--text: #f2f2f2;
 			--text-2: #b8b8b8;
 			--text-3: #858585;
-			--line: #2d2d2d;
-			--accent: #3d8fc9;
+			--line: #2b313a;
+			--accent: #8bb8db;
 			--button: #f2f2f2;
-			--button-text: #141414;
+			--button-text: #15191f;
 			color-scheme: dark;
 		}
 	}
@@ -209,7 +206,7 @@ const description =
 		align-items: center;
 		justify-content: space-between;
 		gap: 16px;
-		min-height: 60px;
+		min-height: 72px;
 	}
 
 	.brand {
@@ -251,7 +248,7 @@ const description =
 	}
 
 	h1 {
-		max-width: 20ch;
+		max-width: 19ch;
 		margin: 16px 0 0;
 		font-size: clamp(34px, 5.2vw, 56px);
 		line-height: 1.08;

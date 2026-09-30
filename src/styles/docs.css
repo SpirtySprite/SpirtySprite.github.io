@@ -1,21 +1,21 @@
 :root {
 	--sl-font: 'Geist', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
 	--sl-font-mono: 'Geist Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
-	--sl-color-accent-low: #10283a;
-	--sl-color-accent: #3d8fc9;
-	--sl-color-accent-high: #8cc4ec;
-	--sl-color-white: #f2f2f2;
+	--sl-color-accent-low: #1c2d3b;
+	--sl-color-accent: #74a9d2;
+	--sl-color-accent-high: #a6c9e4;
+	--sl-color-white: #eceef1;
 	--sl-color-gray-1: #e2e2e2;
 	--sl-color-gray-2: #c4c4c4;
 	--sl-color-gray-3: #9a9a9a;
 	--sl-color-gray-4: #6b6b6b;
 	--sl-color-gray-5: #3a3a3a;
-	--sl-color-gray-6: #252525;
-	--sl-color-black: #1b1b1b;
-	--sl-color-bg-nav: #161616;
-	--sl-color-bg-sidebar: #161616;
-	--sl-color-hairline: #2b2b2b;
-	--sl-color-hairline-light: #333333;
+	--sl-color-gray-6: #1e232b;
+	--sl-color-black: #15181d;
+	--sl-color-bg-nav: #171a20;
+	--sl-color-bg-sidebar: #171a20;
+	--sl-color-hairline: #2b313a;
+	--sl-color-hairline-light: #303741;
 	--sl-content-width: 48rem;
 	--sl-text-h1: 2.125rem;
 	--sl-text-h2: 1.5rem;
@@ -23,22 +23,22 @@
 }
 
 :root[data-theme='light'] {
-	--sl-color-accent-low: #dcecf8;
-	--sl-color-accent: #1f6fa8;
-	--sl-color-accent-high: #164e78;
-	--sl-color-white: #141414;
-	--sl-color-gray-1: #262626;
-	--sl-color-gray-2: #3f3f3f;
-	--sl-color-gray-3: #626262;
-	--sl-color-gray-4: #8f8f8f;
+	--sl-color-accent-low: #e8eff5;
+	--sl-color-accent: #295b83;
+	--sl-color-accent-high: #295b83;
+	--sl-color-white: #15191f;
+	--sl-color-gray-1: #252c35;
+	--sl-color-gray-2: #384453;
+	--sl-color-gray-3: #596779;
+	--sl-color-gray-4: #738095;
 	--sl-color-gray-5: #d6d6d6;
-	--sl-color-gray-6: #efefef;
-	--sl-color-gray-7: #f7f7f7;
-	--sl-color-black: #ffffff;
-	--sl-color-bg-nav: #fafafa;
-	--sl-color-bg-sidebar: #fafafa;
-	--sl-color-hairline: #e6e6e6;
-	--sl-color-hairline-light: #ededed;
+	--sl-color-gray-6: #f2f4f6;
+	--sl-color-gray-7: #f7f8fa;
+	--sl-color-black: #fdfdfc;
+	--sl-color-bg-nav: #f8f9fa;
+	--sl-color-bg-sidebar: #f8f9fa;
+	--sl-color-hairline: #e2e6eb;
+	--sl-color-hairline-light: #e7eaee;
 }
 
 .sl-markdown-content h2,
@@ -115,3 +115,22 @@ h1#_top {
 	width: 1.5rem;
 	height: 1.5rem;
 }
+
+/* A quiet, consistent reading surface across all project documentation. */
+:root { --sl-nav-height:4.5rem; --sl-sidebar-width:16.5rem; --sl-content-width:48rem; --sl-text-h1:clamp(2rem,4vw,2.75rem); --sl-text-h2:1.65rem; --sl-text-h3:1.25rem; --sl-line-height:1.75; }
+:root[data-theme='light'] { --sl-color-text-accent:#295b83; }
+h1#_top { line-height:1.15; letter-spacing:-.045em; font-weight:700; }
+.sl-markdown-content h2 { margin-top:2.5rem; font-weight:650; letter-spacing:-.035em; }
+.sl-markdown-content h3 { margin-top:2rem; }
+.sl-markdown-content a { text-underline-offset:3px; }
+.sl-markdown-content table { overflow:auto; display:block; }
+.sl-markdown-content th, .sl-markdown-content td { padding:.75rem 1rem; }
+.sl-markdown-content .starlight-aside { border-inline-start-width:3px; border-radius:0 5px 5px 0; }
+.sl-link-card { box-shadow:none; border-color:var(--sl-color-hairline); }
+.sl-link-card:hover { border-color:var(--sl-color-text-accent); }
+.pagination-links a { box-shadow:none; border-radius:5px; }
+.right-sidebar { font-size:.8rem; }
+starlight-toc a[aria-current='true'] { color:var(--sl-color-text-accent); }
+:focus-visible { outline:2px solid var(--sl-color-text-accent); outline-offset:3px; }
+@media(min-width:50rem) { .content-panel:first-child { padding-top:2.5rem; } .sidebar-content { padding-top:1.5rem; } }
+@media(max-width:49.99rem) { :root { --sl-nav-height:3.75rem; } }
